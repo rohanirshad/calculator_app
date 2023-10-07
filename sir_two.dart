@@ -11,145 +11,136 @@ class SofaScreen2 extends StatefulWidget {
 class _SofaScreen2State extends State<SofaScreen2> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-              height: 800,
-              color: Color(0xffebf5f5),
-            ),
-            Container(
-              height: 150,
-              margin: EdgeInsets.only(top: 800),
-              color: Color(0xff2f6565),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            color: const Color(0xffebf5f5),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 600),
+            height: 160,
+            color: const Color(0xff2f6565),
+          ),
+          SafeArea(
+            child: Column(
               children: [
-                SizedBox(
-                  height: 60,
-                ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: 55,
-                        width: 55,
-                        child: Card(
-                          elevation: 5.0,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(
-                            Icons.menu_rounded,
-                            color: Color(0xff2f6565),
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          height: 45,
+                          width: 45,
+                          child: Card(
+                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(13)),
+                            child: const Icon(
+                              Icons.menu,
+                              color: Color(0xff2f6565),
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 55,
-                        width: 55,
-                        child: Card(
-                          elevation: 5.0,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Icon(
-                            Icons.search,
-                            color: Color(0xff2f6565),
+                        SizedBox(
+                          height: 45,
+                          width: 45,
+                          child: Card(
+                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(13)),
+                            child: const Icon(
+                              Icons.search,
+                              color: Color(0xff2f6565),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    )),
+                const SizedBox(
+                  height: 90,
                 ),
-                SizedBox(
-                  height: 70,
-                ),
-                Text(
+                const Text(
                   'Trends',
                   style: TextStyle(
-                    fontSize: 45,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff2f6565),
-                  ),
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff2f6565)),
                 ),
-                Text(
-                  'Chairs & Cushions',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xff2f6565),
-                  ),
+                const Text(
+                  'Chair & Cushions',
+                  style: TextStyle(fontSize: 20, color: Color(0xff2f6565)),
                 ),
-                SizedBox(
-                  height: 50,
+                const SizedBox(
+                  height: 30,
                 ),
-                Image.asset('assets/images/Sofa.png'),
+                const Image(
+                    height: 280, image: AssetImage('assets/images/Sofa.png')),
+                const SizedBox(
+                  height: 35,
+                ),
               ],
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SofaScreen()));
-              },
-              child: Positioned(
-                bottom: 100,
-                left: 180,
-                child: SizedBox(
-                  width: 80,
-                  height: 80,
-                  child: Card(
-                    elevation: 6.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Icon(
-                      Icons.shopping_cart,
-                      color: Color(0xff2f6565),
-                      size: 30,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 60,
+          ),
+          const Positioned(
+              top: 670,
               left: 40,
               child: Text(
                 'Sweet Combo Pack',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
                   color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              )),
+          Positioned(
+            top: 560,
+            left: 130,
+            child: SizedBox(
+              height: 80,
+              width: 80,
+              child: Card(
+                elevation: 6.0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: Icon(
+                  Icons.shopping_cart,
+                  size: 30,
+                  color: Color(0xff2f6565),
                 ),
               ),
             ),
-            Positioned(
-              bottom: 0,
-              right: 0,
+          ),
+          Positioned(
+            top: 690,
+            left: 270,
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SofaScreen()));
+              },
               child: Container(
-                width: 120,
                 height: 80,
-                decoration: BoxDecoration(
-                  color: Color(0xff184040),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(35)),
-                ),
-                child: Center(
+                width: 90,
+                decoration: const BoxDecoration(
+                    color: Color(0xff143f3f),
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(25))),
+                child: const Center(
                   child: Text(
                     'More',
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
                       color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
                     ),
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
