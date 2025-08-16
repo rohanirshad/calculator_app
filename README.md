@@ -1,2 +1,2 @@
 # calculator_app
-This is the Calculator App written in flutter!
+This is the Calculator App written in flutter.
